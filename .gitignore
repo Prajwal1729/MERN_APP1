@@ -1,0 +1,11 @@
+.env
+package.json
+package-lock.json
+README.md
+node_modules
+public/facicon.ico
+public/logo192.png
+public/logo512.png
+public/manifest.json
+public/robots.txt
+src/logo.svg
