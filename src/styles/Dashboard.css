@@ -1,0 +1,17 @@
+/* pages/Dashboard.css */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  background: #f5f6fa;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
