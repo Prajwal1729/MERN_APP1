@@ -165,4 +165,66 @@
   color:red;
   margin-top:10px;
 }
-/* login page css end*/
+
+ /* nav bar and profile */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* 🔥 pushes profile to right */
+  align-items: center;
+  padding: 15px 30px;
+  background: #131615;
+  color: white;
+}
+
+/* CONTENT BELOW NAVBAR */
+.content {
+  padding: 20px;
+}
+
+/* PROFILE */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0; /* 🔥 keeps it aligned right */
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 10px;
+  width: 150px;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background: #f0f0f0;
+}
