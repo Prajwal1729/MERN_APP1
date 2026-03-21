@@ -10,3 +10,10 @@
   margin-top: 20px;
   cursor: pointer;
 }
+
+.reminder_img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 5px 5px 0px 0px;
+}

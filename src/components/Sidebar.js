@@ -22,7 +22,7 @@ export default function Sidebar() {
   },[]);
   return (
     <div className="sidebar">
-      <h2>LifePilot AI</h2>
+      <h2>LifePilot AI <img src="/reminder_icon.png" alt="" className="reminder_img"/></h2>
        {Array.isArray(leftmenu) &&
         leftmenu.map((item, index) => (
           <p key={index}>{item.name}</p>
