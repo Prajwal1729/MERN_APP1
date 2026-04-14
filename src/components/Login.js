@@ -36,19 +36,20 @@ export default function Login() {
 
     try{
       const data = await loginApi(email,password);
-       console.log(data);
-       if(data?.admin?.email === email && data?.admin?.password === true){
-        // console.log("hii");
-        setSuccessMessage("Login Successfully!");
-        setErrorMessage("");
+       //console.log(data,"logindata");
+       if(data?.token){
+         setSuccessMessage("LoggedIn Succesfully!");
+         setErrorMessage("");
+         sessionStorage.setItem('token',data.token);
+         setTimeout(()=>{
+           navigate('/admin/dashboard')
+         },2000)
        }
        else{
         setErrorMessage("Invalid Credentials!");
         setSuccessMessage("");
        }
 
-      sessionStorage.setItem("token", data.token);
-      navigate("/admin/dashboard");
     }catch(error){
       setError("Login Failed")
     }
