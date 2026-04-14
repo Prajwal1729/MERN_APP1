@@ -68,8 +68,7 @@ export default function CreateAccount(){
         
       try{
         const data = await accountApi(email,password,confirmpassword);
-        console.log(data);
-
+        //console.log(data,"createAcountData");
         if(data?.existing_user){
            if(data?.existing_user === email){
             setErrorMessage("User Already Exist!");
