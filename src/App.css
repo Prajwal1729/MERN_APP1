@@ -160,6 +160,15 @@
   cursor:pointer;
 }
 
+.forgot-password{
+  color:#aaa;
+  margin-top:15px;
+}
+
+.forgot-password span{
+  color:#f7b500;
+  cursor:pointer;
+}
 
 .error{
   color:red;

@@ -1,6 +1,4 @@
 import React from "react";
-// import { useEffect } from "react";
-import { useState } from "react";
 import { loginApi } from "../apis/loginApi";
 import { useNavigate } from "react-router-dom";
 import SuccessMessage from "./SucessMessage";
@@ -8,11 +6,11 @@ import ErrorMessage from "./ErrorMessage";
 
 export default function Login() {
 
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
-  const [error,setError] = useState("")
-  const [successMessage,setSuccessMessage] = useState("");
-  const [errorMessage,setErrorMessage] = useState("");
+  const [email,setEmail] = React.useState("");
+  const [password,setPassword] = React.useState("");
+  const [error,setError] = React.useState("")
+  const [successMessage,setSuccessMessage] = React.useState("");
+  const [errorMessage,setErrorMessage] = React.useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -115,6 +113,10 @@ export default function Login() {
 
           <p className="signup">
             Not a member? <span style={{color: "blue", cursor: "pointer"}} onClick={() => navigate("/admin/createaccount")}>Create an Account</span>
+          </p>
+
+           <p className="forgot-password">
+            Login with OTP <span style={{color:"blue",cursor:"pointer"}} onClick={()=>navigate('/loginotp')}>Login OTP</span>
           </p>
 
         </div>
