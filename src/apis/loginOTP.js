@@ -2,8 +2,8 @@ import api from "./api";
 
 export const sendOTP = async(email)=>{
     try{
-      const response = await api.post('/sendOTP',{email});
-      console.log(response,"loginotp");
+      const response = await api.post('/admin/sendOTP',{email});
+      //console.log(response,"loginotp");
       return response.data;
 
     }catch(error){
@@ -14,8 +14,8 @@ export const sendOTP = async(email)=>{
 
 export const verifyOTP = async(email,otp)=>{
     try{
-        const response = await api.post('/verifyOTP',{email,otp});
-        console.log(response,"verifyotp");
+        const response = await api.post('/admin/verifyOTP',{email,otp});
+        //console.log(response,"verifyotp");
         return response.data;
     }catch(error){
         console.log(error);

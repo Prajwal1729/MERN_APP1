@@ -49,7 +49,7 @@ export default function ForgotPassword() {
 
       try{
         const data = await sendOTP(email);
-        console.log(data,"login otp response");
+        //console.log(data,"login otp response");
 
         if(data.email === email){
             setSuccessMessage("OTP sent Sucessfully!");
@@ -58,7 +58,7 @@ export default function ForgotPassword() {
             setTimeLeft(data.expires_in)
         }
         else if(data.email!==email){
-            console.log("testing");
+            //console.log("testing");
             setSuccessMessage("");
             setErrorMessage("An account with this Email ID doesn't exist!");
         }
@@ -74,14 +74,20 @@ export default function ForgotPassword() {
 
   const handleVerifyOTP = async (e)=>{
     e.preventDefault();
+    try{
+      const data = await verifyOTP(email,otp);
+      sessionStorage.setItem("token",data.token);
+      setSuccessMessage("OTP verfied sucessfully");
+      setErrorMessage("");
 
-    const data = await verifyOTP(email,otp);
-    sessionStorage.setItem("token",data.token);
-
-    setTimeout(()=>{
-      successMessage("OTP verfied sucessfully")
-      navigate('/admin/dashboard');
-    },2000)
+      setTimeout(()=>{
+        navigate('/admin/dashboard');
+      },2000);
+    }catch(error){
+      console.log("Error: ",error);
+      setErrorMessage("OTP verification failed");
+      setSuccessMessage("");
+    }
   }
   return (
     <div className="login-container">
