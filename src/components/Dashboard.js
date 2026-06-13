@@ -13,6 +13,12 @@ export default function Dashboard() {
     sessionStorage.removeItem('token');
     navigate('/admin/login');
   }
+  
+  const token = sessionStorage.getItem('token');
+
+  if(!token){
+    navigate('/admin/login');
+  }
 
   return (
     <div className="dashboard">
