@@ -52,9 +52,9 @@ export default function Dashboard() {
         </div>
 
         {/* PAGE CONTENT */}
-        <div className="content">
+        {/* <div className="content">
           <h1>Welcome to Dashboard</h1>
-        </div>
+        </div> */}
 
       </div>
     </div>
